@@ -34,10 +34,10 @@ class _HomeScreenState extends State<HomeScreen> {
               selectedIndex = value;
               setState(() {});
             },
-            backgroundColor: Color(0xFFE2BE7F),
+            backgroundColor: const Color(0xFFE2BE7F),
             showUnselectedLabels: false,
             showSelectedLabels: true,
-            unselectedItemColor: Color(0xFF202020),
+            unselectedItemColor: const Color(0xFF202020),
             selectedItemColor: Colors.white,
             type: BottomNavigationBarType.fixed,
             items: [
@@ -58,11 +58,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   List<Widget> tabs = [
-    QuranTab(),
-    AhadethTab(),
-    SebhaTab(),
-    RadioTab(),
-    TimeTab(),
+    const QuranTab(),
+    const AhadethTab(),
+    const SebhaTab(),
+    const RadioTab(),
+    const TimeTab(),
   ];
 
   String getBackgroundImageName(index) {
@@ -83,9 +83,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildNavItem(int index, String imageName) {
     return selectedIndex == index
         ? Container(
-            padding: EdgeInsets.symmetric(vertical: 6, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 20),
             decoration: BoxDecoration(
-              color: Color(0x99202020),
+              color: const Color(0x99202020),
               borderRadius: BorderRadius.circular(66),
             ),
             child: ImageIcon(

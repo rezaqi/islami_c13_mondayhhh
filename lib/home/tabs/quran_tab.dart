@@ -6,14 +6,17 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+
+    double w = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: EdgeInsets.only(top: h / 4, right: w / 20, left: w / 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.asset("assets/images/onboarding_header.png"),
           TextField(
-            cursorColor: Color(0xFFE2BE7F),
+            cursorColor: const Color(0xFFE2BE7F),
             cursorWidth: 3,
             style: GoogleFonts.elMessiri(
               fontSize: 18,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c13_monday/core/class/images.dart';
 import 'package:islami_c13_monday/home/tabs/ahadeth_tab.dart';
 import 'package:islami_c13_monday/home/tabs/quran_tab.dart';
 import 'package:islami_c13_monday/home/tabs/radio_tab.dart';
@@ -52,7 +53,10 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   icon: _buildNavItem(4, "dates"), label: "Time"),
             ]),
-        body: tabs[selectedIndex],
+        body: Stack(
+          alignment: Alignment.topCenter,
+          children: [Image.asset(AppImages.islami), tabs[selectedIndex]],
+        ),
       ),
     );
   }

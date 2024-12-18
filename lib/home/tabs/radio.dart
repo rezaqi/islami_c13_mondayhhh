@@ -15,6 +15,7 @@ class _RadioTabState extends State<RadioTab> {
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
 
+    // double w = MediaQuery.of(context).size.width;
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.only(top: h / 4),

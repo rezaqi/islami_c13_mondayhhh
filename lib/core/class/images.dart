@@ -1,7 +1,7 @@
 class AppImages {
   static const String welcome = "assets/images/welcome.png";
   static const String radio = 'assets/images/radio.png';
-  // static const String mosque = 'assets/images/Mosque-01.png';
+  static const String soundWave = 'assets/images/soundWave 1.png';
   static const String kabba = 'assets/images/kabba.png';
   static const String islami = 'assets/images/onboarding_header.png';
   static const String bearish = 'assets/images/bearish.png';
@@ -21,6 +21,10 @@ class AppImages {
   static const String quran = 'assets/images/quran.png';
   static const String radioBg = 'assets/images/radio_bg.png';
   static const String sebhaBg = 'assets/images/sebha_bg.png';
-
+  static const String mosque = 'assets/images/Mosque-02.png';
+  static const String volumeCross = 'assets/images/Volume Cross.png';
+  static const String volumeHigh = 'assets/images/Volume High.png';
+  static const String pause = 'assets/images/Pause.png';
   static const String topCircle = 'assets/images/top_circle.png';
+  static const String polygon = 'assets/images/Polygon 2.png';
 }

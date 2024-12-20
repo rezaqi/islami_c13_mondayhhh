@@ -26,8 +26,8 @@ class _CustomButtomTapState extends State<CustomButtomTap> {
             ? Theme.of(context)
                 .textTheme
                 .titleLarge!
-                .copyWith(color: AppColor.primaryColor)
-            : Theme.of(context).textTheme.titleLarge,
+                .copyWith(color: AppColor.primaryColor, fontSize: 20)
+            : Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 20),
       ),
     );
   }

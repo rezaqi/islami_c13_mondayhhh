@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami_c13_monday/core/class/images.dart';
-import 'package:islami_c13_monday/home/tabs/ahadeth_tab.dart';
-import 'package:islami_c13_monday/home/tabs/quran_tab.dart';
-import 'package:islami_c13_monday/home/tabs/radio.dart';
+import 'package:islami_c13_monday/home/tabs/ahadeth/ahadeth_tab.dart';
+import 'package:islami_c13_monday/home/tabs/quran_tab/quran_tab.dart';
+import 'package:islami_c13_monday/home/tabs/radio_tab.dart';
 import 'package:islami_c13_monday/home/tabs/sebha_tab.dart';
 import 'package:islami_c13_monday/home/tabs/time_tab.dart';
 
@@ -28,19 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
             fit: BoxFit.cover),
       ),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedIndex,
             onTap: (value) {
               selectedIndex = value;
               setState(() {});
             },
-            backgroundColor: const Color(0xFFE2BE7F),
-            showUnselectedLabels: false,
-            showSelectedLabels: true,
-            unselectedItemColor: const Color(0xFF202020),
-            selectedItemColor: Colors.white,
-            type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
                   icon: _buildNavItem(0, "quran"), label: "Quran"),
@@ -53,17 +45,19 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   icon: _buildNavItem(4, "dates"), label: "Time"),
             ]),
-        body: Stack(
-          alignment: Alignment.topCenter,
-          children: [Image.asset(AppImages.islami), tabs[selectedIndex]],
+        body: Column(
+          children: [
+            Image.asset("assets/images/onboarding_header.png"),
+            Expanded(child: tabs[selectedIndex]),
+          ],
         ),
       ),
     );
   }
 
   List<Widget> tabs = [
-    const QuranTab(),
-    const AhadethTab(),
+    QuranTab(),
+    AhadethTab(),
     const SebhaTab(),
     const RadioTab(),
     const TimeTab(),

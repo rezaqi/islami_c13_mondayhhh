@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:islami_c13_monday/core/class/color.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:islami_c13_monday/cache_helper/cache_helper.dart';
+import 'package:islami_c13_monday/hadeth_details/hadeth_details.dart';
 import 'package:islami_c13_monday/home/home.dart';
+import 'package:islami_c13_monday/my_theme_data.dart';
 import 'package:islami_c13_monday/onBoading_screen.dart';
+import 'package:islami_c13_monday/sura_details/sura_details_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper.init();
   runApp(const MyApp());
 }
 
@@ -13,16 +19,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-          textTheme: const TextTheme(
-              titleLarge: TextStyle(
-                  color: AppColor.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400))),
+      theme: MyThemeData.lightTheme,
+      darkTheme: MyThemeData.darkTheme,
+      themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      initialRoute: OnBoardingScreen.routeName,
+      initialRoute: CacheHelper.getEligibility() == true
+          ? HomeScreen.routeName
+          : OnBoardingScreen.routeName,
       routes: {
         OnBoardingScreen.routeName: (context) => const OnBoardingScreen(),
+        SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
         HomeScreen.routeName: (context) => HomeScreen(),
       },
     );

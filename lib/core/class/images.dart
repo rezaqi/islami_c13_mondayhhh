@@ -27,4 +27,6 @@ class AppImages {
   static const String pause = 'assets/images/Pause.png';
   static const String topCircle = 'assets/images/top_circle.png';
   static const String polygon = 'assets/images/Polygon 2.png';
+  static const String left = 'assets/images/Vector 1.png';
+  static const String right = 'assets/images/Vector 2.png';
 }
